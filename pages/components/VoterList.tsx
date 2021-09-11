@@ -15,10 +15,18 @@ const VoterList = ({ id, vote }: Props) => {
   if (error) null;
 
   return (
-    <div className="flex">
-      <img src={user?.data()?.photoURL} alt="user" />
-      <div>{user?.data()?.displayName}</div>
-      <div>Voted: {vote === true ? "✔️" : "❌"}</div>
+    <div className="flex space-x-2 items-center hover:bg-gray-100 cursor-pointer px-4 py-1 rounded-md">
+      <img
+        className="h-10 w-10 rounded-full ring-2 ring-white"
+        src={user?.data()?.photoURL}
+        alt="user"
+      />
+      <div className="flex flex-col justify-center ">
+        <div className="font-bold">{user?.data()?.displayName}</div>
+        <div className="text-sm font-semibold">
+          Voted: {vote === true ? "✔️" : "❌"}
+        </div>
+      </div>
     </div>
   );
 };

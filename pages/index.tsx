@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center space-y-2 h-screen w-screen bg-gray-200 ">
+    <div className="flex flex-col justify-center items-center space-y-2 min-h-screen w-screen bg-gray-200 ">
       <Head>
         <title>Vote Box</title>
         <link rel="icon" href="/favicon.ico" />
@@ -34,7 +34,7 @@ export default function Home() {
               {votes?.docs?.filter((doc) => doc.data().vote === false).length}
             </div>
           </div>
-          <div className=" p-10 bg-white flex items-center justify-center">
+          <div className=" p-10 bg-white flex items-center justify-center  rounded-md">
             <p className="text-lg font-bold">
               Do you agree with legalizing Weed in Australia??
             </p>
@@ -42,18 +42,19 @@ export default function Home() {
           <div className="space-x-2">
             <button
               onClick={() => addVote(true)}
-              className="font-semibold bg-green-400 px-2 active:bg-green-800"
+              className="font-semibold bg-green-400 px-2 active:bg-green-800 rounded-md"
             >
               YES
             </button>
             <button
               onClick={() => addVote(false)}
-              className="font-semibold bg-red-400 px-2 active:bg-red-800"
+              className="font-semibold bg-red-400 px-2 active:bg-red-800 rounded-md"
             >
               NO
             </button>
           </div>
-          <div>
+          <div className="font-bold text-xl pt-10 pb-5">Voters:</div>
+          <div className="space-y-2">
             {votes?.docs?.map((doc) => (
               <VoterList key={doc.id} id={doc.id} vote={doc.data().vote} />
             ))}
