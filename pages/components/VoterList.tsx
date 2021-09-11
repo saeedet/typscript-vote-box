@@ -9,7 +9,7 @@ interface Props {
 
 const VoterList = ({ id, vote }: Props) => {
   const db = firebase.firestore();
-  const [user, loading, error] = useDocument(db.doc(`users/${id}`));
+  const [user, loading, error] = useDocument(db.doc(`user/${id}`));
 
   if (loading) <p className="font-bold text-md">Loading...</p>;
   if (error) null;
