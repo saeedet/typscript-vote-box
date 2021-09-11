@@ -42,13 +42,13 @@ export default function Home() {
           <div className="space-x-2">
             <button
               onClick={() => addVote(true)}
-              className="font-semibold bg-green-400 px-2 active:bg-green-800 rounded-md"
+              className="font-semibold bg-green-400 px-2 active:bg-green-800 rounded-md hover:shadow-md active:shadow-none"
             >
               YES
             </button>
             <button
               onClick={() => addVote(false)}
-              className="font-semibold bg-red-400 px-2 active:bg-red-800 rounded-md"
+              className="font-semibold bg-red-400 px-2 active:bg-red-800 rounded-md  hover:shadow-md active:shadow-none"
             >
               NO
             </button>

@@ -24,7 +24,7 @@ const VoterList = ({ id, vote }: Props) => {
       <div className="flex flex-col justify-center ">
         <div className="font-bold">{user?.data()?.displayName}</div>
         <div className="text-sm font-semibold">
-          Voted: {vote === true ? "✔️" : "❌"}
+          Voted: {vote === true ? "✔️ YES" : "❌ NO"}
         </div>
       </div>
     </div>
