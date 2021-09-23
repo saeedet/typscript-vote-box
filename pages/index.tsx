@@ -5,14 +5,13 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import Auth from "./components/Auth";
 import VoterList from "./components/VoterList";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const db = firebase.firestore();
   const [user, loading, error] = useAuthState(firebase.auth());
-  const [votes, votesLoading, votesError] = useCollection(
-    db.collection("votes")
-  );
+  const [votes, votesLoading, votesError] =
+    useCollection<firebase.firestore.DocumentData>(db.collection("votes"));
 
-  const addVote = async (vote: boolean) => {
+  const addVote = async (vote: boolean): Promise<void> => {
     await db.collection("votes").doc(user.uid).set({
       vote,
     });

@@ -14,7 +14,7 @@ interface Props {
   loading: boolean;
 }
 
-function Auth({ loading }: Props) {
+function Auth({ loading }: Props): JSX.Element {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen bg-blue-200 p-5">
       <h1 className="text-2xl mb-2 font-bold text-red-400">Vote Box</h1>
